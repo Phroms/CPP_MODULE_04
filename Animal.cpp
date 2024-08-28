@@ -12,10 +12,12 @@
 
 #include "Animal.hpp"
 
-std::string mensaje(std::string msg)
+Animal::Animal()
 {
-    msg = "funcionaaaa!!!!";
+    std::cout << "Called Constructor Animal" << std::endl;
+}
 
-    std::cout << "Imprimiendo mensaje: " << msg << std::endl;
-    return (msg);
+Animal::~Animal()
+{
+    std::cout << "Called Destructor Animal" << std::endl;
 }

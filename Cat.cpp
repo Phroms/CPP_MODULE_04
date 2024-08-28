@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 17:41:38 by agrimald          #+#    #+#             */
-/*   Updated: 2024/08/27 17:41:39 by agrimald         ###   ########.fr       */
+/*   Created: 2024/08/28 15:46:41 by agrimald          #+#    #+#             */
+/*   Updated: 2024/08/28 15:46:42 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+# include "Animal.hpp"
 
-# include <iostream>
-# include <string>
-# include "Dog.hpp"
-# include "Cat.hpp"
-
-class Animal
+Cat::Cat()
 {
-    protected:
-        std::string _type;
-    public:
-        Animal();
-        virtual void makesound();
-        ~Animal();
+    std::cout << "Called Constructor Cat" << std::endl;
 }
 
-#endif
+Cat::~Cat()
+{
+    std::cout << "Called Destructor Cat" << std::endl;
+}

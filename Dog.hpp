@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/27 17:41:38 by agrimald          #+#    #+#             */
-/*   Updated: 2024/08/27 17:41:39 by agrimald         ###   ########.fr       */
+/*   Created: 2024/08/28 15:46:24 by agrimald          #+#    #+#             */
+/*   Updated: 2024/08/28 15:46:28 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include <iostream>
-# include <string>
-# include "Dog.hpp"
+# include "Animal.hpp"
 # include "Cat.hpp"
 
-class Animal
+class Dog : public Animal
 {
-    protected:
-        std::string _type;
+    private:
+        std::string _dog;
     public:
-        Animal();
-        virtual void makesound();
-        ~Animal();
-}
+        Dog();
+        void    makesound();
+        ~Dog();
+};
 
-#endif
+# endif
