@@ -10,11 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Animal.hpp"
+# include "Cat.hpp"
 
-Cat::Cat()
+Cat::Cat() : Animal("Cat")
 {
     std::cout << "Called Constructor Cat" << std::endl;
+}
+
+Cat::Cat(const Cat& cpy) : Animal(cpy)
+{
+    std::cout << "Called Constructor Cat 2" << std::endl;
+    *this = cpy;
+}
+
+Cat &Cat::operator=(const Cat &rhs)
+{
+    std::cout << "Called Constructor Cat Operator" << std::endl;
+    if (this != &rhs)
+        this->_type = rhs._type;
+    return *this;
+}
+
+void Cat::makeSound()const
+{
+    std::cout << "Miaw!!!" << std::endl;
 }
 
 Cat::~Cat()

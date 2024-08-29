@@ -18,7 +18,7 @@ CYAN = \033[96m
 RED = \033[91m
 END_COLOR = \033[0m
 
-SRC = main.cpp Animal.cpp
+SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJECTS = $(SRC:.cpp=.o)
 

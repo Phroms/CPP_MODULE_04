@@ -14,15 +14,14 @@
 # define DOG_HPP
 
 # include "Animal.hpp"
-# include "Cat.hpp"
 
 class Dog : public Animal
 {
-    private:
-        std::string _dog;
     public:
         Dog();
-        void    makesound();
+        Dog(const Dog& cpy);
+        Dog &operator=(const Dog &rhs);
+        void    makeSound()const;
         ~Dog();
 };
 

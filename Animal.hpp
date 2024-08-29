@@ -15,8 +15,6 @@
 
 # include <iostream>
 # include <string>
-# include "Dog.hpp"
-# include "Cat.hpp"
 
 class Animal
 {
@@ -24,8 +22,12 @@ class Animal
         std::string _type;
     public:
         Animal();
-        virtual void makesound();
-        ~Animal();
-}
+        Animal(const std::string type);
+        Animal(const Animal& cpy);
+        Animal &operator=(const Animal &rhs);
+        virtual void makeSound() const;
+        std::string getType() const;
+        virtual ~Animal();
+};
 
 #endif

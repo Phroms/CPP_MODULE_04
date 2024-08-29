@@ -10,7 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+# include "Animal.hpp"
+# include "Dog.hpp"
+# include "Cat.hpp"
+# include "WrongAnimal.hpp"
+# include "WrongCat.hpp"
 
 int main()
 {
@@ -22,6 +26,20 @@ int main()
     i->makeSound(); //will output the cat sound!
     j->makeSound();
     meta->makeSound();
-    ...
+
+    delete i;
+    delete j;
+    delete meta;
+
+    const WrongAnimal *WrongAnimals[] =
+    {
+        new WrongAnimal(),
+        new WrongCat(),
+    };
+    for (int i = 0; i < 2; i++)
+    {
+        WrongAnimals[i]->makeSound();
+        delete WrongAnimals[i];
+    }
     return 0;
 }
