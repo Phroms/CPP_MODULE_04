@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 15:46:41 by agrimald          #+#    #+#             */
-/*   Updated: 2024/08/28 15:46:42 by agrimald         ###   ########.fr       */
+/*   Created: 2024/08/28 15:46:33 by agrimald          #+#    #+#             */
+/*   Updated: 2024/08/28 15:46:35 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Cat.hpp"
+# include "Dog.hpp"
 
-Cat::Cat() : Animal("Cat")
+Dog::Dog() : Animal("Dog")
 {
-    std::cout << "Called Constructor Cat" << std::endl;
+    std::cout << "\033[36mCalled Constructor Dog\033[0m" << std::endl;
 }
 
-Cat::Cat(const Cat& cpy) : Animal(cpy)
+Dog::Dog(const Dog& cpy) : Animal(cpy)
 {
-    std::cout << "Called Constructor Cat 2" << std::endl;
+    std::cout << "\033[36mCalled Constructor Dog copy\033[0m" << std::endl;
     *this = cpy;
 }
 
-Cat &Cat::operator=(const Cat &rhs)
+Dog &Dog::operator=(const Dog &rhs)
 {
-    std::cout << "Called Constructor Cat Operator" << std::endl;
+    std::cout << "\033[36mCalled Constructor Dog Operator\033[0m" << std::endl;
     if (this != &rhs)
         this->_type = rhs._type;
     return *this;
 }
 
-void Cat::makeSound()const
+void Dog::makeSound()const
 {
-    std::cout << "Miaw!!!" << std::endl;
+    std::cout << "\033[36mWoof!!!\033[0m" << std::endl;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-    std::cout << "Called Destructor Cat" << std::endl;
+    std::cout << "\033[36mCalled Destructor Dog\033[0m" << std::endl;
 }

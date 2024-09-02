@@ -6,13 +6,13 @@
 #    By: agrimald <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/27 17:41:12 by agrimald          #+#    #+#              #
-#    Updated: 2024/08/27 17:41:14 by agrimald         ###   ########.fr        #
+#    Updated: 2024/09/02 17:59:53 by agrimald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Animal
 CPP = c++
-CPPFLAGS = -Wall -Werror -Wextra
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -rf
 CYAN = \033[96m
 RED = \033[91m

@@ -15,26 +15,26 @@
 WrongAnimal::WrongAnimal()
 {
     this->_type = "Wrong Animal";
-    std::cout << "Called Constructor of Wrong Animal" << std::endl;
+    std::cout << "\033[34mCalled Constructor of Wrong Animal\033[0m" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const std::string type)
 {
     this->_type = type;
-    std::cout << "Called Constructor of Wrong Animal 2" << std::endl;
+    std::cout << "\033[34mCalled Constructor of Wrong Animal 2\033[0m" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& cpy)
 {
     this->_type = cpy._type;
-    std::cout << "Called Constructor Wrong Animal copy" << std::endl;
+    std::cout << "\033[34mCalled Constructor Wrong Animal copy\033[0m" << std::endl;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
 {
     if (this != &rhs)
         this->_type = rhs._type;
-    std::cout << "Called Constructor Wrong Animal operator" << std::endl;
+    std::cout << "\033[34mCalled Constructor Wrong Animal operator\033[0m" << std::endl;
     return *this;
 }
 
@@ -45,10 +45,10 @@ std::string WrongAnimal::getType()const
 
 void WrongAnimal::makeSound()const
 {
-    std::cout << "Bad Sound of animal" << std::endl;
+    std::cout << "\033[30mBad Sound of animal\033[0m" << std::endl;
 }
 
 WrongAnimal::~WrongAnimal()
 {
-    std::cout << "Called Destructor Wron Animal" << std::endl;
+    std::cout << "\033[31mCalled Destructor Wrong Animal\033[0m" << std::endl;
 }

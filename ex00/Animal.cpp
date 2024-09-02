@@ -15,24 +15,24 @@
 Animal::Animal()
     : _type("Animal")
 {
-    std::cout << "Called Constructor Animal" << std::endl;
+    std::cout << "\033[33mCalled Constructor Animal\033[0m" << std::endl;
 }
 
 Animal::Animal(const std::string type)
     : _type(type)
 {
-    std::cout << "Called Constructor Animal 2" << std::endl;
+    std::cout << "\033[33mCalled Constructor Type\033[0m" << std::endl;
 }
 
 Animal::Animal(const Animal& cpy)
 {
-    std::cout << "Called Constructor Animal copy" << std::endl;
+    std::cout << "\033[33mCalled Constructor Animal copy\033[0m" << std::endl;
     this->_type = cpy._type;
 }
 
 Animal &Animal::operator=(const Animal &rhs)
 {
-    std::cout << "Called Constructor Animal Operator" << std::endl;
+    std::cout << "\033[33mCalled Constructor Animal Operator\033[0m" << std::endl;
     if (this != &rhs)
         this->_type = rhs._type;
     return *this;
@@ -40,7 +40,7 @@ Animal &Animal::operator=(const Animal &rhs)
 
 void Animal::makeSound()const
 {
-    std::cout << "Make sound" << std::endl;
+    std::cout << "\033[35mMake sound\033[0m" << std::endl;
 }
 
 std::string Animal::getType() const
@@ -50,5 +50,5 @@ std::string Animal::getType() const
 
 Animal::~Animal()
 {
-    std::cout << "Called Destructor Animal" << std::endl;
+    std::cout << "\033[33mCalled Destructor Animal\033[0m" << std::endl;
 }
