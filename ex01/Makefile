@@ -22,7 +22,7 @@ SRC = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 
 OBJECTS = $(SRC:.cpp=.o)
 
-all = $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJECTS)
 		 @echo "$(CYAN)\nCompiling!!!\n$(END_COLOR)"
