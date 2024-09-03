@@ -14,10 +14,39 @@
 
 Brain::Brain()
 {
-    std::cout << "Called Constructor Brain" << std::endl;
+    std::cout << "Brain Called Constructor" << std::endl;
+}
+
+Brain::Brain(const Brain &cpy)
+{
+    *this = cpy;
+    std::cout << "Brain Called Constructor copy" << std::endl;
+}
+
+Brain &Brain::operator=(const Brain &rhs)
+{
+    std::cout << "Brain Called Constructor operator" << std::endl;
+    if (this != &rhs)
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            this->ideas[i] = rhs.ideas[i];
+        }
+    }
+    return *this;
+}
+
+std::string Brain::getType(int index) const
+{
+    return this->ideas[index];
+}
+
+void Brain::setType(int index, const std::string &idea)
+{
+    ideas[index] = idea;
 }
 
 Brain::~Brain()
 {
-    std::cout << "Called Destructor Brain" << std::endl;
+    std::cout << "Brain Called Destructor" << std::endl;
 }

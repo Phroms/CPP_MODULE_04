@@ -15,6 +15,7 @@
 # include "Cat.hpp"
 # include "WrongAnimal.hpp"
 # include "WrongCat.hpp"
+# include "Brain.hpp"
 
 int main()
 {
@@ -41,5 +42,38 @@ int main()
         WrongAnimals[i]->makeSound();
         delete WrongAnimals[i];
     }
+
+
+    std::cout << "\n_____________________ EX02 TESTS _____________________\n" << std::endl;
+    Animal*  testAnimals[] =
+    {
+        new Cat(),
+        new Dog(),
+        new Dog(),
+        new Cat(),
+    new Dog(),
+    new Cat(),
+    };
+
+    for (int i = 0; i < 6; i++)
+        testAnimals[i]->makeSound();
+    for (int i = 0; i < 6; i++)
+        delete testAnimals[i];
+
+    std::cout << "\033[34m\n_____________________ DEEP COPY TEST _____________________\033[0m\n" << std::endl;
+
+    /*std::cout << "Empezo" << std::endl;
+     Cat a;
+     Cat b;
+     a = b;
+     std::cout << a.getType() << std::endl;
+    std::cout << "termino" << std::endl;*/
+
+    Cat* cat = new Cat();
+    Cat* cat2 = new Cat(*cat);
+
+    delete cat2;
+    delete cat;
+
     return 0;
 }

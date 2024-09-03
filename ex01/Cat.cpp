@@ -14,18 +14,25 @@
 
 Cat::Cat() : Animal("Cat")
 {
-    std::cout << "Called Constructor Cat" << std::endl;
+    std::cout << "Cat Called Constructor" << std::endl;
+    this->_brain = new Brain;
 }
 
 Cat::Cat(const Cat& cpy) : Animal(cpy)
 {
-    this->_type = cpy._type;
+    //this->_type = cpy._type;
+    *this = cpy;
+    std::cout << "Cat Called Constructor cpy" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &rhs)
 {
+    std::cout << "Cat Called Constructor Operator" << std::endl;
     if (this != &rhs)
+    {
         this->_type = rhs._type;
+        this->_brain = new Brain(*rhs._brain);
+    }
     return *this;
 }
 
@@ -36,5 +43,6 @@ void Cat::makeSound() const
 
 Cat::~Cat()
 {
-    std::cout << "Called Destructor Cat" << std::endl;
+    std::cout << "Cat Called Destructor" << std::endl;
+    delete this->_brain;
 }

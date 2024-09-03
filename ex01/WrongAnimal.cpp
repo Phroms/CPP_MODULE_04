@@ -15,26 +15,28 @@
 WrongAnimal::WrongAnimal()
 {
     this->_type = "Wrong Animal";
-    std::cout << "\033[96mCalled Constructor of Wrong Animal\033[0m" << std::endl;
+    std::cout << "Wrong Animal Called Constructor" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string type)
 {
     this->_type = type;
-    std::cout << "Called Constructor type of Wrong Animal" << std::cout;
+    std::cout << "Wrong Animal Called Constructor type" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& cpy)
 {
     this->_type = cpy._type;
-    std::cout << "Called Constructor copy of Wrong Animal" << std::cout;
+    std::cout << "Wrong Animal Called Constructor copy" << std::endl;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &rhs)
 {
     if (this != &rhs)
+    {
         this->_type = rhs._type;
-    std::cout << "Called Constructor operator of Wrong Animal" << std::endl;
+    }
+    std::cout << "Wrong Animal Called Constructor operator" << std::endl;
     return *this;
 }
 
@@ -50,5 +52,5 @@ std::string WrongAnimal::getType() const
 
 WrongAnimal::~WrongAnimal()
 {
-    std::cout << "Called Destructor Wrong Animal" << std::endl;
+    std::cout << "Wrong Animal Called Destructor" << std::endl;
 }

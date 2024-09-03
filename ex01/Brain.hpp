@@ -15,11 +15,17 @@
 
 # include "Animal.hpp"
 
-class Brain : public Animal
+class Brain
 {
+    private:
+        std::string ideas[100];
     public:
         Brain();
+        Brain(const Brain& cpy);
+        Brain &operator=(const Brain &rhs);
+        std::string getType(int index) const;
+        void setType(int index, const std::string &ideal);
         ~Brain();
-}
+};
 
 #endif

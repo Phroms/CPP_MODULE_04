@@ -15,22 +15,24 @@
 Animal::Animal()
     : _type("Animal")
 {
-    std::cout << "Calle constructor Animal" << std::endl;
+    std::cout << "Animal Called constructor" << std::endl;
 }
 
 Animal::Animal(std::string type)
     : _type(type)
 {
-    std::cout << "Called Constructor Type Animal" << std::endl;
+    std::cout << "Animal Called Constructor Type" << std::endl;
 }
 
 Animal::Animal(const Animal& cpy)
 {
-    this->_type = cpy._type;
+    std::cout << "Animal Called Constructor Copy" << std::endl;
+    *this = cpy;
 }
 
 Animal  &Animal::operator=(const Animal &rhs)
 {
+    std::cout << "Animal Called Constructor Operator" << std::endl;
     if (this != &rhs)
     {
         this->_type = rhs._type;
@@ -50,5 +52,5 @@ std::string Animal::getType() const
 
 Animal::~Animal()
 {
-    std::cout << "Called Destructor Animal" << std::endl;
+    std::cout << "Animal Called Destructor" << std::endl;
 }
