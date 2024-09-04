@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-Name = Abstract_class
+NAME = Abstract_class
 CPP = c++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -rf
@@ -18,7 +18,7 @@ CYAN = \033[96m
 RED = \033[91m
 END_COLOR = \033[0m
 
-SRC = main.cpp Animal.cpp
+SRC = main.cpp Animal.cpp Brain.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJECTS = $(SRC:.cpp=.o)
 
