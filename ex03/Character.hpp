@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/04 18:38:25 by agrimald          #+#    #+#             */
-/*   Updated: 2024/09/04 18:38:26 by agrimald         ###   ########.fr       */
+/*   Created: 2024/09/05 18:08:10 by agrimald          #+#    #+#             */
+/*   Updated: 2024/09/05 18:08:12 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
-# include <iostream>
-# include <string.h>
+# include "AMateria.hpp"
 
-class AMateria
+# define SLOTS 4
+# define ACCUMULATOR 100
+
+class Character
 {
-    protected:
-        std::string _type;
+    private:
+        std::string _name;
+        AMateria*   _inventory[SLOTS];
+        AMateria*   _garbage[100];
     public:
-        AMateria();
-        AMateria(std::string type);
-        AMateria(const AMateria &cpy);
-        AMateria &operator=(const AMateria &rhs);
-        std::string getType()const;
-        virtual void use(ICharacter& target) = 0;
-        virtual ~AMateria();
+        Character();
+        Character(std::string name);
+        Character(const Character &cpy);
+        Character &operator=(const Character &rhs);
+        ~Character();
 };
 
 #endif

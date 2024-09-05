@@ -12,10 +12,45 @@
 
 # include "AMateria.hpp"
 
-std::string mensaje(std::string msg)
+AMateria::AMateria()
+    : _type("Materia")
 {
-    msg = "Funcionaa :D!!";
+    std::cout << "AMateria Called Constructor" << std::endl;
+}
 
-    std::cout << "Imprimiendo mensaje: " << msg << std::endl;
-    return (msg);
+AMateria::AMateria(std::string type)
+    : type(type);
+{
+    std::cout << "AMateria Called Constructor type" << std::endl;
+}
+
+AMateria::AMateria(const AMateria &cpy)
+{
+    this->_type = cpy._type;
+    std::cout << "AMateria Called Constructor cpy" << std::endl;
+}
+
+AMateria &AMateria::operator=(const AMateria &rhs)
+{
+    std::cout << "AMateria Called Constructor operator" << std::endl;
+    if (this != &rhs)
+    {
+        this->_type = rhs._type;
+    }
+    return *this;
+}
+
+std::string AMateria::getType() const
+{
+    return this->_type;
+}
+
+AMateria::~AMateria()
+{
+    std::cout << "AMateria Called Destructor" << std::endl;
+}
+
+void AMateria::use(ICharacter& target) //Este metodo se sobrescribrira ensubclase y actualmente no utiliza 'target'
+{
+    (void)target; //Evita advertencias de parametros no utilizados
 }
