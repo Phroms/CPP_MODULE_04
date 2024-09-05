@@ -30,6 +30,13 @@ class Character
         Character(const Character &cpy);
         Character &operator=(const Character &rhs);
         ~Character();
+
+        std::string getName() const;
+
+        void equip(AMateria* materia);
+        void unequip(int idx);
+        void use(int idx, ICharacter& target);
+        void printinventory(void);
 };
 
 #endif

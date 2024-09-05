@@ -115,3 +115,71 @@ std::string Character::getName() const
     return _name;
 }
 
+void Character::equip(AMateria* materia)
+{
+    if (!materia)
+    {
+        std::cerr << "ERROR: materia does not exits" << std::endl;
+        return ;
+    }
+    for (int i = 0; i < SLOTS; i++)
+    {
+        if (!this->_inventory[i])
+        {
+            this->_inventory[i] = materia->clone();
+            std::cout << materia->getType() << " EQUIPPED IN " << i << " SLOTS." << std::endl;
+            return ;
+        }
+    }
+    std::cout << " Full Inventory " << std::endl;
+}
+
+void Character::unequip(int idx)
+{
+    if (idx >= 0 && idx < 4)
+    {
+        if (_inventorty[idx])
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                if (!_garbabe)
+                {
+                    this->_garbage[i] = _inventory[idx]->clone();
+                }
+            }
+            delete _inventory[idx];
+            _inventory[idx] = NULL;
+            std::cout << " THE MATERIA IN SLOT: " << idx << " WAS UNEQUIPPED." << std::endl;
+        }
+        else
+        {
+            std::cout << " SLOT: " << idx << "IT IS TOTALLY EMPTY." << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << " IT WAS NOT POSSIBLE TO PROCEED WITHOUT EQUIPPING. AN INCORRECT INVENTORY SLOT WAS PROVIDED."
+    }
+}
+
+void Character::use(int idx, ICharacter& target)
+{
+    if (_inventory[idx])
+    {
+        if (idx >= 0 && idx < 4 && _inventory[idx])
+            _inventory[idx]->use(target);
+    }
+    else
+        std::cout << " THERE IS NO MATERIA IN THIS SLOT: " << idx << " to target " << target.getName() << " with!" << std::endl;
+}
+
+void Character::printinventory(void)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        if (_inventory[i])
+            std::cout << "THE INVENTORY SLOT " << i << " IS " << _inventory[i]->getType() << "." << std::endl;
+        else
+            std::cout << "THE INVENTORY SLOT " << i << " IS EMPTY." << std::endl;
+    }
+}
