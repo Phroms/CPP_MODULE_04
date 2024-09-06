@@ -14,18 +14,18 @@
 
 Cure::Cure() : AMateria("\033[32mCURE\033[0m")
 {
-    std::cout << "Cure Called Constructor" << std::endl;
+    //std::cout << "Cure Called Constructor" << std::endl;
 }
 
 Cure::Cure(const Cure &cpy) : AMateria(cpy)
 {
     this->_type = cpy._type;
-    std::cout << "Cure Called Constructor cpy" << std::endl;
+    //std::cout << "Cure Called Constructor cpy" << std::endl;
 }
 
 Cure &Cure::operator=(const Cure &rhs)
 {
-    std::cout << "Cure Called Constructor operator" << std::endl
+    //std::cout << "Cure Called Constructor operator" << std::endl;
     if (this != &rhs)
     {
         this->_type = rhs._type;
@@ -45,5 +45,5 @@ void Cure::use(ICharacter &target)
 
 Cure::~Cure()
 {
-    std::cout << "Cure Called Destructor" << std::endl;
+    //std::cout << "Cure Called Destructor" << std::endl;
 }

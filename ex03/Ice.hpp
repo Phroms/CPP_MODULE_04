@@ -19,7 +19,7 @@ class Ice : public AMateria
 {
     public:
         Ice();
-        Ice(const Ice &cpy)
+        Ice(const Ice &cpy);
         Ice &operator=(const Ice &rhs);
         AMateria* clone()const;
         void use(ICharacter &target);

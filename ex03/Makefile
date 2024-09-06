@@ -18,7 +18,7 @@ CYAN = \033[96m
 RED = \033[91m
 END_COLOR = \033[0m
 
-SRC = main.cpp AMateria.cpp
+SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp
 
 OBJECTS = $(SRC:.cpp=.o)
 

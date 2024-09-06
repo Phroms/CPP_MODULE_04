@@ -14,18 +14,18 @@
 
 Ice::Ice() : AMateria("\033[34mICE\033[0m")
 {
-    std::cout << "Ice Called Constructor" << std::endl;
+    //std::cout << "Ice Called Constructor" << std::endl;
 }
 
 Ice::Ice(const Ice &cpy) : AMateria(cpy)
 {
     this->_type = cpy._type;
-    std::cout << "Ice Called Constructor cpy" << std::endl;
+    //std::cout << "Ice Called Constructor cpy" << std::endl;
 }
 
 Ice &Ice::operator=(const Ice &rhs)
 {
-    std::cout << "Ice Called Constructor operator" << std::endl;
+    //std::cout << "Ice Called Constructor operator" << std::endl;
     if (this != &rhs)
     {
         this->_type = rhs._type;
@@ -46,5 +46,5 @@ void Ice::use(ICharacter &target)
 
 Ice::~Ice()
 {
-    std::cout << "Ice Called Destructor" << std::endl;
+    //std::cout << "Ice Called Destructor" << std::endl;
 }

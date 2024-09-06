@@ -25,7 +25,7 @@ class IMateriaSource
         virtual  void learnMateria(AMateria* materia) = 0;
         //Metodo que crea una nueva AMateria basada en un tipo previamente aprendido
         //Si el tipo no es conocido, devuelve nullptr
-        virtual void AMateria* createMateria(const std::string type) = 0;
+        virtual AMateria* createMateria(const std::string type) = 0;
         virtual void printMaterias(void) = 0;
 };
 

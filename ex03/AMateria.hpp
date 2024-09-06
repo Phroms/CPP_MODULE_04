@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string.h>
+# include "ICharacter.hpp"
 
 class AMateria
 {
@@ -26,6 +27,7 @@ class AMateria
         AMateria(const AMateria &cpy);
         AMateria &operator=(const AMateria &rhs);
         std::string getType()const;
+        virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target) = 0;
         virtual ~AMateria();
 };

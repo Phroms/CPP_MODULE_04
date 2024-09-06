@@ -18,7 +18,7 @@
 # define SLOTS 4
 # define ACCUMULATOR 100
 
-class Character
+class Character : public ICharacter
 {
     private:
         std::string _name;

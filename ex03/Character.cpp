@@ -63,7 +63,7 @@ Character::Character(const Character &cpy)
 
 Character &Character::operator=(const Character &rhs)
 {
-    this->_name = rhs._getName();
+    this->_name = rhs.getName();
     for (int i = 0; i < SLOTS; i++)
     {
         if (this->_inventory[i] != NULL)
@@ -88,6 +88,7 @@ Character &Character::operator=(const Character &rhs)
             this->_garbage[i] = rhs._garbage[i]->clone();
         }
     }
+    return *this;
 }
 
 Character::~Character()
@@ -138,27 +139,27 @@ void Character::unequip(int idx)
 {
     if (idx >= 0 && idx < 4)
     {
-        if (_inventorty[idx])
+        if (_inventory[idx])
         {
             for (int i = 0; i < 100; i++)
             {
-                if (!_garbabe)
+                if (!_garbage)
                 {
                     this->_garbage[i] = _inventory[idx]->clone();
                 }
             }
             delete _inventory[idx];
             _inventory[idx] = NULL;
-            std::cout << " THE MATERIA IN SLOT: " << idx << " WAS UNEQUIPPED." << std::endl;
+            std::cout << "THE MATERIA IN SLOT: " << idx << " WAS UNEQUIPPED." << std::endl;
         }
         else
         {
-            std::cout << " SLOT: " << idx << "IT IS TOTALLY EMPTY." << std::endl;
+            std::cout << "SLOT: " << idx << " IT IS TOTALLY EMPTY." << std::endl;
         }
     }
     else
     {
-        std::cout << " IT WAS NOT POSSIBLE TO PROCEED WITHOUT EQUIPPING. AN INCORRECT INVENTORY SLOT WAS PROVIDED."
+        std::cout << " IT WAS NOT POSSIBLE TO PROCEED WITHOUT EQUIPPING. AN INCORRECT INVENTORY SLOT WAS PROVIDED." << std::endl;
     }
 }
 
@@ -170,7 +171,7 @@ void Character::use(int idx, ICharacter& target)
             _inventory[idx]->use(target);
     }
     else
-        std::cout << " THERE IS NO MATERIA IN THIS SLOT: " << idx << " to target " << target.getName() << " with!" << std::endl;
+        std::cout << "THERE IS NO MATERIA IN THIS SLOT: " << idx << " to target " << target.getName() << " with!" << std::endl;
 }
 
 void Character::printinventory(void)

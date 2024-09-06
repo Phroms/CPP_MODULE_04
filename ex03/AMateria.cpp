@@ -15,24 +15,24 @@
 AMateria::AMateria()
     : _type("Materia")
 {
-    std::cout << "AMateria Called Constructor" << std::endl;
+    //std::cout << "AMateria Called Constructor" << std::endl;
 }
 
 AMateria::AMateria(std::string type)
-    : type(type);
+    : _type(type)
 {
-    std::cout << "AMateria Called Constructor type" << std::endl;
+    //std::cout << "AMateria Called Constructor type" << std::endl;
 }
 
 AMateria::AMateria(const AMateria &cpy)
 {
     this->_type = cpy._type;
-    std::cout << "AMateria Called Constructor cpy" << std::endl;
+    //std::cout << "AMateria Called Constructor cpy" << std::endl;
 }
 
 AMateria &AMateria::operator=(const AMateria &rhs)
 {
-    std::cout << "AMateria Called Constructor operator" << std::endl;
+    //std::cout << "AMateria Called Constructor operator" << std::endl;
     if (this != &rhs)
     {
         this->_type = rhs._type;
@@ -47,7 +47,7 @@ std::string AMateria::getType() const
 
 AMateria::~AMateria()
 {
-    std::cout << "AMateria Called Destructor" << std::endl;
+    //std::cout << "AMateria Called Destructor" << std::endl;
 }
 
 void AMateria::use(ICharacter& target) //Este metodo se sobrescribrira ensubclase y actualmente no utiliza 'target'
