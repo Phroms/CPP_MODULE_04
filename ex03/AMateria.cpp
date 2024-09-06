@@ -26,7 +26,7 @@ AMateria::AMateria(std::string type)
 
 AMateria::AMateria(const AMateria &cpy)
 {
-    this->_type = cpy._type;
+    *this = cpy;
     //std::cout << "AMateria Called Constructor cpy" << std::endl;
 }
 

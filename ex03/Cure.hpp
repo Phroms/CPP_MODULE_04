@@ -24,6 +24,6 @@ class Cure : public AMateria
         AMateria* clone()const;
         void use(ICharacter &target);
         ~Cure();
-};
+};  
 
 #endif

@@ -60,9 +60,9 @@ void MateriaSource::learnMateria(AMateria* materia)
     }
     for (int i = 0; i < SLOTS; i++)
     {
-        if (!this->_materia[i])
+        if (!_materia[i])
         {
-            _materia[i] = materia->clone();
+            this->_materia[i] = materia->clone();
             return ;
         }
     }
@@ -70,9 +70,9 @@ void MateriaSource::learnMateria(AMateria* materia)
 
 AMateria* MateriaSource::createMateria(const std::string type)
 {
-    for (int i = 0; i < SLOTS; i++)
+    for (int i = 0; i < 4; i++)
     {
-        if (_materia[i]->getType() ==  type)
+        if (_materia[i]->getType() == type)
             return (_materia[i]);
     }
     return (0);

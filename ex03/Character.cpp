@@ -85,7 +85,7 @@ Character &Character::operator=(const Character &rhs)
         this->_garbage[i] = NULL;
         if (rhs._garbage[i] != NULL)
         {
-            this->_garbage[i] = rhs._garbage[i]->clone();
+            this->_garbage[i] = rhs._inventory[i]->clone();
         }
     }
     return *this;
@@ -143,10 +143,8 @@ void Character::unequip(int idx)
         {
             for (int i = 0; i < 100; i++)
             {
-                if (!_garbage)
-                {
+                if (!_garbage[i])
                     this->_garbage[i] = _inventory[idx]->clone();
-                }
             }
             delete _inventory[idx];
             _inventory[idx] = NULL;

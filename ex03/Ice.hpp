@@ -14,9 +14,12 @@
 # define ICE_HPP
 
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 
 class Ice : public AMateria
 {
+    private:
+        std::string _name;
     public:
         Ice();
         Ice(const Ice &cpy);

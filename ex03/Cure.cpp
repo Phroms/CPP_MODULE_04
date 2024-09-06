@@ -25,7 +25,7 @@ Cure::Cure(const Cure &cpy) : AMateria(cpy)
 
 Cure &Cure::operator=(const Cure &rhs)
 {
-    //std::cout << "Cure Called Constructor operator" << std::endl;
+    //std::cout << "Cure Called Constructor operator" << std::endl
     if (this != &rhs)
     {
         this->_type = rhs._type;
