@@ -12,7 +12,7 @@
 
 # include "Ice.hpp"
 
-Ice::Ice() : AMateria("\033[34mICE\033[0m")
+Ice::Ice() : AMateria("ice")
 {
     //std::cout << "Ice Called Constructor" << std::endl;
 }
@@ -35,7 +35,8 @@ Ice &Ice::operator=(const Ice &rhs)
 
 AMateria* Ice::clone()const
 {
-    return new Ice(); //Retorna una copia de la instancia actual
+    AMateria *ice = new Ice(*this);
+    return (ice); //Retorna una copia de la instancia actual
 }
 
 // Sobrescribre el metodo "use" para aplicar un efecto especifico de hielo

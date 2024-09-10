@@ -15,7 +15,7 @@
 # include "AMateria.hpp"
 
 Character::Character()
-    : _name("\033[97mUnknow\033[0m")
+    : _name("Unknow")
 {
     for (int i = 0; i < SLOTS; i++)
     {
@@ -120,7 +120,7 @@ void Character::equip(AMateria* materia)
 {
     if (!materia)
     {
-        std::cerr << "ERROR: materia does not exits" << std::endl;
+        std::cerr << "ERROR: materia does not exits 2" << std::endl;
         return ;
     }
     for (int i = 0; i < SLOTS; i++)

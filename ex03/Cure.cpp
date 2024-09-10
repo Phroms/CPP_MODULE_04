@@ -12,7 +12,7 @@
 
 # include "Cure.hpp"
 
-Cure::Cure() : AMateria("\033[32mCURE\033[0m")
+Cure::Cure() : AMateria("cure")
 {
     //std::cout << "Cure Called Constructor" << std::endl;
 }
@@ -35,7 +35,8 @@ Cure &Cure::operator=(const Cure &rhs)
 
 AMateria* Cure::clone()const
 {
-    return new Cure();
+    AMateria *cure = new Cure(*this);
+    return (cure);
 }
 
 void Cure::use(ICharacter &target)
