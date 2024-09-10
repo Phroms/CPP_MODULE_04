@@ -14,8 +14,6 @@
 # define WRONGANIMAL_HPP
 
 # include "Animal.hpp"
-//# include <iostream>
-//# include <string.h>
 
 class WrongAnimal
 {
