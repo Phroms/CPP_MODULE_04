@@ -62,13 +62,6 @@ int main()
 
     std::cout << "\033[34m\n_____________________ DEEP COPY TEST _____________________\033[0m\n" << std::endl;
 
-    /*std::cout << "Empezo" << std::endl;
-     Cat a;
-     Cat b;
-     a = b;
-     std::cout << a.getType() << std::endl;
-    std::cout << "termino" << std::endl;*/
-
     Cat* cat = new Cat();
     Cat* cat2 = new Cat(*cat);
 

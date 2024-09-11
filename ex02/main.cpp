@@ -6,7 +6,7 @@
 /*   By: agrimald <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:53:21 by agrimald          #+#    #+#             */
-/*   Updated: 2024/09/03 18:53:24 by agrimald         ###   ########.fr       */
+/*   Updated: 2024/09/10 18:45:44 by agrimald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,10 @@ int main()
 
     std::cout << "\033[34m\n_____________________ DEEP COPY TEST _____________________\033[0m\n" << std::endl;
 
-    //std::cout << "Empezo" << std::endl;
     Cat a;
     Cat b;
     a = b;
     std::cout << a.getType() << std::endl;
-    //std::cout << "Termino" << std::endl;
-
-    /*Cat* cat = new Cat();
-    Cat* cat2 = new Cat(*cat);
-
-    delete cat2;
-    delete cat;*/
-
+    
     return (0);
 }

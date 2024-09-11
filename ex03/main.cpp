@@ -20,7 +20,7 @@
 
 int main()
 {
- IMateriaSource* creadorMaterial = new MateriaSource();
+    IMateriaSource* creadorMaterial = new MateriaSource();
     AMateria* gel = new Ice();
     AMateria* cura = new Cure();
     std::cout << std::endl;
@@ -57,4 +57,4 @@ int main()
     delete uri;
     delete target;
 	return (0);
-	}
+}

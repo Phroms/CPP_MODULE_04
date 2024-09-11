@@ -19,6 +19,7 @@ RED = \033[91m
 END_COLOR = \033[0m
 
 SRC = main.cpp Animal.cpp Brain.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+INC = Animal.hpp  Brain.hpp  Cat.hpp  Dog.hpp WrongAnimal.hpp  WrongCat.hpp
 
 OBJECTS = $(SRC:.cpp=.o)
 
@@ -27,6 +28,9 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 		 @echo "$(CYAN)\nCompiling!!!\n$(END_COLOR)"
 		 $(CPP) $(CPPFLAGS) -o $(NAME) $(OBJECTS)
+
+%.o: %.cpp $(INC) Makefile
+		 $(CPP) $(CPPFLAGS) -c $< -o $@
 
 fclean:  clean
 		 $(RM) $(NAME) $(OBJECTS) 

@@ -41,6 +41,7 @@ std::string Brain::getType(int index) const
     return this->ideas[index];
 }
 
+//Cambia el valor de una idea en una nueva posicion especifica del arreglo, almacenando una nueva cadena
 void Brain::setType(int index, const std::string &idea)
 {
     ideas[index] = idea;

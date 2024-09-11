@@ -57,6 +57,7 @@ Character::Character(const Character &cpy)
         if (cpy._garbage[i] != NULL)
         {
             _garbage[i] = cpy._garbage[i]->clone();
+            //delete this->_garbage[i];
         }
     }
 }
@@ -127,7 +128,7 @@ void Character::equip(AMateria* materia)
     {
         if (!this->_inventory[i])
         {
-            this->_inventory[i] = materia->clone();
+            this->_inventory[i] = materia;
             std::cout << materia->getType() << " EQUIPPED IN " << i << " SLOTS." << std::endl;
             return ;
         }
@@ -160,6 +161,36 @@ void Character::unequip(int idx)
         std::cout << " IT WAS NOT POSSIBLE TO PROCEED WITHOUT EQUIPPING. AN INCORRECT INVENTORY SLOT WAS PROVIDED." << std::endl;
     }
 }
+
+/*void Character::unequip(int idx)
+{
+    if (idx >= 0 && idx < SLOTS)
+    {
+        if (_inventory[idx])
+        {
+            for (int i = 0; i < ACCUMULATOR; i++)
+            {
+                if (!_garbage[i])
+                {
+                    _garbage[i] = _inventory[idx];  // Mover el puntero, no clonarlo
+                    _inventory[idx] = NULL;
+                    std::cout << "THE MATERIA IN SLOT: " << idx << " WAS UNEQUIPPED." << std::endl;
+                    return;
+                }
+            }
+            std::cout << "Garbage is full, unable to unequip." << std::endl;
+        }
+        else
+        {
+            std::cout << "SLOT: " << idx << " IT IS TOTALLY EMPTY." << std::endl;
+        }
+    }
+    else
+    {
+        std::cout << " IT WAS NOT POSSIBLE TO PROCEED WITHOUT EQUIPPING. AN INCORRECT INVENTORY SLOT WAS PROVIDED." << std::endl;
+    }
+}*/
+
 
 void Character::use(int idx, ICharacter& target)
 {
